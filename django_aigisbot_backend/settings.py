@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
     "core",
     "rest_api",
     "graphql_api",
     "rest_framework_json_api",
     "rest_framework",
+    "django.contrib.staticfiles",  # Required for GraphiQL
+    "graphene_django",
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,6 @@ REST_FRAMEWORK = {
         # ...
     ),
 }
+
+
+GRAPHENE = {"SCHEMA": "graphql_api.schema.schema"}

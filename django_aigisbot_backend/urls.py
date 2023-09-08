@@ -1,4 +1,6 @@
 from django.urls import path, include
+from graphene_django.views import GraphQLView
+
 
 """
 URL configuration for django_aigisbot_backend project.
@@ -22,4 +24,5 @@ from django.urls import path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("rest_api.urls"), name="api"),
+    path("graphql", GraphQLView.as_view(graphiql=True)),
 ]
